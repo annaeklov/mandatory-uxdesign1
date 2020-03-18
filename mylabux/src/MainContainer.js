@@ -49,10 +49,13 @@ const Main = styled.main`
   .section__bottom {
     border: 1px solid #c7c2b1;
     height: 65%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   h1 {
     color: #7a7048; /* #e2422d;  */
-    margin: 0;
+    margin: 10px 0 0 0;
     font-family: "Playfair Display SC", serif;
   }
 `;
