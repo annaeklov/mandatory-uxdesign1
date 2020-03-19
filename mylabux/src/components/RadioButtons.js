@@ -4,12 +4,16 @@ import styled from "styled-components";
 export default function RadioButtons() {
   return (
     <section>
-          <div className="section__top">
-
-      <h1>RadioButtons</h1>
-            </div>
-      <div className="section__bottom"> </div>
-
+      <div className="section__top">
+        <h1>RadioButtons</h1>
+      </div>
+      <div className="section__bottom">
+        <form>
+          <input type="radio" />
+          <input type="radio" />
+          <input type="radio" />
+        </form>
+      </div>
     </section>
   );
 }

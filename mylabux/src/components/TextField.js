@@ -1,25 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 export default function TextField() {
+  const [isFocused, setIsFocused] = useState(false);
+
+  function onFocus() {
+    console.log("in focus");
+  }
+
   return (
     <section>
       <div className="section__top">
         <h1>TextField</h1>
       </div>
       <div className="section__bottom">
-        <Input__Container>
-          <Input__Label for="textField">Label</Input__Label>
-          <Input__Field type="text" id="textField" />
-        </Input__Container>
+        <Form>
+          <Input__Label htmlFor="textField">Label</Input__Label>
+          <Input__Field type="text" id="textField" onFocus={onFocus} />
+        </Form>
       </div>
     </section>
   );
 }
 /* ---STYLING--- */
 
-const Input__Container = styled.form`
-  border: 1px solid pink;
+const Form = styled.form`
   width: 280px;
   height: 70px;
   display: flex;
