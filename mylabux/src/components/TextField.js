@@ -15,8 +15,9 @@ export default function TextField() {
       </div>
       <div className="section__bottom">
         <Form>
-          <Input__Label htmlFor="textField">Label</Input__Label>
-          <Input__Field type="text" id="textField" onFocus={onFocus} />
+          <input type="text" id="textField" onFocus={onFocus} />
+          <label htmlFor="textField">Label</label>
+          <span className="bar"></span>
         </Form>
       </div>
     </section>
@@ -25,31 +26,68 @@ export default function TextField() {
 /* ---STYLING--- */
 
 const Form = styled.form`
-  width: 280px;
-  height: 70px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   position: relative;
-`;
+  margin: 20px 5px;
 
-const Input__Field = styled.input`
-  border: none;
-  border-bottom: 1px solid grey;
-  width: 100%;
-  height: 56px;
-  border-radius: 4px 4px 0 0;
-  padding: 0 12px 0 12px;
-  outline: none;
-`;
+  input {
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 1px solid grey;
+    width: 280px;
+    height: 56px;
+    border-radius: 4px 4px 0 0;
+    padding: 0 12px 0 12px;
+    outline: none;
+    font-size: 16px;
+    opacity: 0.5;
 
-const Input__Label = styled.label`
-  position: absolute;
-  top: 50%;
-  left: 0;
-  transform: translate(0, -50%);
-  color: #00000099;
-  font-size: 16px;
-  font-family: "Roboto", sans-serif;
-  padding: 0 12px 0 12px;
+    &:focus {
+      opacity: 1;
+    }
+  }
+
+  label {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(0, -50%);
+    color: #00000099;
+    font-size: 16px;
+    font-family: "Roboto", sans-serif;
+    padding: 0 12px 0 12px;
+    transition: 0.2s ease all;
+  }
+
+  input:focus ~ label {
+    top: 10px;
+    font-size: 14px;
+    color: #e38066;
+  }
+
+  .bar {
+    position: relative;
+    display: block;
+    width: 280px;
+
+    &:before,
+    &:after {
+      content: "";
+      height: 2px;
+      width: 0;
+      bottom: 1px;
+      position: absolute;
+      background: #e38066;
+      transition: 0.2s ease all;
+    }
+    &:before {
+      left: 50%;
+    }
+    &:after {
+      right: 50%;
+    }
+  }
+  input:focus ~ .bar:before,
+  input:focus ~ .bar:after {
+    width: 50%;
+  }
 `;

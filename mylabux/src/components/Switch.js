@@ -10,7 +10,7 @@ export default function Switch() {
       <div className="section__bottom">
         <Form>
           <input type="checkbox" id="switch" />
-          <label htmlFor="switch"/>
+          <label htmlFor="switch" />
         </Form>
       </div>
     </section>
@@ -21,6 +21,7 @@ export default function Switch() {
 const Form = styled.form`
   display: inline-block;
   position: relative;
+  margin: 20px 5px;
 
   input {
     width: 36px;
@@ -77,3 +78,5 @@ const Form = styled.form`
     }
   }
 `;
+
+//input:disabled .... inte klickbar..

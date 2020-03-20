@@ -28,7 +28,7 @@ const Main = styled.main`
   align-items: center;
   justify-content: center;
   position: relative;
-
+  box-sizing: border-box;
   .pic {
     mix-blend-mode: multiply;
     position: absolute;
@@ -38,24 +38,22 @@ const Main = styled.main`
   }
 
   section {
-    width: 50%;
+    width: 80%;
     height: 20%;
     display: flex;
     flex-direction: column;
+    border: 1px solid black;
   }
   .section__top {
-    height: 30%;
+    height: auto;
+    margin: 0;
   }
   .section__bottom {
-    border: 1px solid #c7c2b1;
-    height: 65%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    height: 85%;
   }
   h1 {
     color: #7a7048; /* #e2422d;  */
-    margin: 10px 0 0 0;
+    margin: 0;
     font-family: "Playfair Display SC", serif;
   }
 `;
