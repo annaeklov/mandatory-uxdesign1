@@ -13,10 +13,9 @@ export default function CheckBoxes() {
           <label htmlFor="checkbox" />
         </Form>
         <Form2>
-          <input id="checkbox2" type="checkbox" checked/>
+          <input id="checkbox2" type="checkbox" checked disabled/>
           <input id="checkbox3" type="checkbox" disabled />
         </Form2>
-       
       </div>
     </section>
   );

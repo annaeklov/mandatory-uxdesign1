@@ -13,8 +13,9 @@ export default function Switch() {
           <label htmlFor="switch" />
         </Form>
         <Form2>
-          <input type="checkbox" id="switch2" />
+          <input type="checkbox" id="switch2" disabled/>
           <label htmlFor="switch2" />
+          
         </Form2>
       </div>
     </section>
@@ -90,7 +91,7 @@ const Form2 = styled.form`
   margin: 20px 5px;
   width: 50%;
 
-  input {
+  input:disabled {
     width: 36px;
     height: 20px;
     position: absolute;
@@ -131,4 +132,6 @@ const Form2 = styled.form`
         0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
     }
   }
+
+  
 `;
