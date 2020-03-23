@@ -12,6 +12,10 @@ export default function Switch() {
           <input type="checkbox" id="switch" />
           <label htmlFor="switch" />
         </Form>
+        <Form2>
+          <input type="checkbox" id="switch2" />
+          <label htmlFor="switch2" />
+        </Form2>
       </div>
     </section>
   );
@@ -22,6 +26,7 @@ const Form = styled.form`
   display: inline-block;
   position: relative;
   margin: 20px 5px;
+  width: 50%;
 
   input {
     width: 36px;
@@ -45,7 +50,7 @@ const Form = styled.form`
       left: 0;
       width: 36px;
       height: 14px;
-      background-color: lightgrey;
+      background-color: grey;
       border-radius: 14px;
       z-index: 1;
       transition: background-color 0.28s cubic-bezier(0.4, 0, 0.2, 1);
@@ -58,7 +63,7 @@ const Form = styled.form`
       left: 0;
       width: 20px;
       height: 20px;
-      background-color: grey;
+      background-color: white;
       border-radius: 50%;
       z-index: 2;
       box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.16),
@@ -79,4 +84,51 @@ const Form = styled.form`
   }
 `;
 
-//input:disabled .... inte klickbar..
+const Form2 = styled.form`
+  display: inline-block;
+  position: relative;
+  margin: 20px 5px;
+  width: 50%;
+
+  input {
+    width: 36px;
+    height: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    z-index: 0;
+  }
+
+  label {
+    display: block;
+    padding: 0 0 0 44px;
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 5px;
+      left: 0;
+      width: 36px;
+      height: 14px;
+      background-color: lightgrey;
+      border-radius: 14px;
+      z-index: 1;
+      opacity: 0.7;
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: 2px;
+      left: 0;
+      width: 20px;
+      height: 20px;
+      background-color: white;
+      border-radius: 50%;
+      z-index: 2;
+      box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.16),
+        0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+    }
+  }
+`;

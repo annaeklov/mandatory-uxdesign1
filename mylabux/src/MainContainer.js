@@ -29,6 +29,7 @@ const Main = styled.main`
   justify-content: center;
   position: relative;
   box-sizing: border-box;
+
   .pic {
     mix-blend-mode: multiply;
     position: absolute;
@@ -50,7 +51,9 @@ const Main = styled.main`
   }
   .section__bottom {
     height: 85%;
+    width: 100%;
   }
+
   h1 {
     color: #7a7048; /* #e2422d;  */
     margin: 0;
