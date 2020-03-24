@@ -11,11 +11,17 @@ export default function Switch() {
         <Form>
           <input type="checkbox" id="switch" />
           <label htmlFor="switch" />
+          <span></span>
         </Form>
         <Form2>
-          <input type="checkbox" id="switch2" disabled/>
-          <label htmlFor="switch2" />
-          
+          <div>
+            <input type="checkbox" id="switch2" checked />
+            <label htmlFor="switch2" />
+          </div>
+          <div>
+            <input type="checkbox" id="switch3" disabled />
+            <label htmlFor="switch3" />
+          </div>
         </Form2>
       </div>
     </section>
@@ -37,6 +43,24 @@ const Form = styled.form`
     left: 0;
     opacity: 0;
     z-index: 0;
+
+    &:hover ~ span {
+      z-index: 1;
+    }
+  }
+
+  span {
+    position: absolute;
+    top: -6px;
+    left: -9px;
+    display: inline-block;
+    z-index: -1;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: lightgrey;
+    opacity: 0.4;
+    transition: left 0.28s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   label {
@@ -74,24 +98,33 @@ const Form = styled.form`
     }
   }
 
-  input:checked + label {
-    ::before {
-      background-color: #fac4a6;
-    }
-    ::after {
-      left: 17px;
-      background-color: #e38066;
-    }
+  input:checked ~ label:before {
+    background-color: #fac4a6;
+  }
+  input:checked ~ label:after {
+    left: 17px;
+    background-color: #e38066;
+  }
+  input:checked ~ span {
+    left: 8px;
+  }
+  input:focus ~ span {
+    opacity: 0.5;
+    z-index: 1;
   }
 `;
 
 const Form2 = styled.form`
-  display: inline-block;
-  position: relative;
+  display: flex;
   margin: 20px 5px;
   width: 50%;
 
-  input:disabled {
+  div {
+    width: 50%;
+    position: relative;
+  }
+
+  input {
     width: 36px;
     height: 20px;
     position: absolute;
@@ -133,5 +166,15 @@ const Form2 = styled.form`
     }
   }
 
-  
+  input:checked + label {
+    ::before {
+      background-color: #fac4a6;
+      opacity: 0.7;
+    }
+    ::after {
+      left: 17px;
+      background-color: #e38066;
+      opacity: 0.7;
+    }
+  }
 `;
